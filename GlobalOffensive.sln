@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GlobalOffensive", "GlobalOffensive\GlobalOffensive.csproj", "{4A476621-93F0-4AF0-A29A-4C24A2F49089}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GlobalOffensive.WebAPI", "GlobalOffensive.WebAPI\GlobalOffensive.WebAPI.csproj", "{9AC74BFA-B16B-416D-917C-CEF1C40955D1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{4A476621-93F0-4AF0-A29A-4C24A2F49089}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4A476621-93F0-4AF0-A29A-4C24A2F49089}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4A476621-93F0-4AF0-A29A-4C24A2F49089}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4A476621-93F0-4AF0-A29A-4C24A2F49089}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9AC74BFA-B16B-416D-917C-CEF1C40955D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AC74BFA-B16B-416D-917C-CEF1C40955D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AC74BFA-B16B-416D-917C-CEF1C40955D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AC74BFA-B16B-416D-917C-CEF1C40955D1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
