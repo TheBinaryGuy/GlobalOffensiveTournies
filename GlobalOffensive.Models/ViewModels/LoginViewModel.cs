@@ -1,4 +1,4 @@
-﻿namespace GlobalOffensive.WebAPI.ViewModels
+﻿namespace GlobalOffensive.ViewModels
 {
     public class LoginViewModel
     {

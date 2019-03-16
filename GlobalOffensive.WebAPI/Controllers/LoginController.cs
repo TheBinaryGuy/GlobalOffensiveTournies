@@ -1,4 +1,4 @@
-﻿using GlobalOffensive.WebAPI.ViewModels;
+﻿using GlobalOffensive.ViewModels;
 using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Configuration;

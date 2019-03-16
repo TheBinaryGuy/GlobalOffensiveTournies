@@ -1,0 +1,95 @@
+﻿@model GlobalOffensive.Models.Tournament
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<h4>Tournament</h4>
+<p>
+    @Html.ActionLink("Delete", "Delete", new { id = Model.Id })
+</p>
+<hr />
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StartDate)
+        </dt>
+
+        <dd>
+            @Html.ValueFor(model => model.StartDate, "{0:dd/MM/yyyy hh:mm}")
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EndDate)
+        </dt>
+
+        <dd>
+            @Html.ValueFor(model => model.EndDate, "{0:dd/MM/yyyy hh:mm}")
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NoOfTeamsParticipating)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NoOfTeamsParticipating)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PricePool)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PricePool)
+        </dd>
+    </dl>
+</div>
+
+@if (Model.Matches != null)
+{
+    <h4>Tournament</h4>
+    <div>
+        @foreach (var match in Model?.Matches)
+        {
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => match.TeamA)
+                </dt>
+
+                <dd>
+                    @Html.ValueFor(model => match.TeamA)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => match.TeamB)
+                </dt>
+
+                <dd>
+                    @Html.ValueFor(model => match.TeamB)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => match.StartTime)
+                </dt>
+
+                <dd>
+                    @Html.ValueFor(model => match.StartTime, "{0:dd/MM/yyyy hh:mm}"))
+                </dd>
+
+                <dd>@Html.ActionLink("Details", "Details", "Match", new { id = match.Id }, null)</dd>
+
+                <dd>@Html.ActionLink("Delete", "Delete", "Match", new { id = match.Id, tournamentId = Model.Id }, null)</dd>
+            </dl>
+        }
+    </div>
+}

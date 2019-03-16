@@ -1,0 +1,48 @@
+﻿@model GlobalOffensive.Models.Match
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Match</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TeamA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TeamA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TeamB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TeamB)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StartTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StartTime, "{0:dd/MM/yyyy hh:ss}")
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TournamentId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TournamentId)
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Delete", "Delete", new { id = Model.Id })
+</p>

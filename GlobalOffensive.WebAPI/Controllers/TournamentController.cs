@@ -1,4 +1,4 @@
-﻿using GlobalOffensive.WebAPI.Models;
+﻿using GlobalOffensive.Models;
 using GlobalOffensive.WebAPI.Services;
 using System.Threading.Tasks;
 using System.Web.Http;
@@ -52,7 +52,11 @@ namespace GlobalOffensive.WebAPI.Controllers
         [HttpPatch]
         public async Task<IHttpActionResult> Patch([FromBody] Tournament tournament)
         {
-            return Json(await _tournamentService.UpdateTournamentAsync(tournament));
+            if (ModelState.IsValid || tournament.Id != null || tournament.Id > 0)
+            {
+                return Json(await _tournamentService.UpdateTournamentAsync(tournament));
+            }
+            return Json(ModelState);
         }
 
         // DELETE api/<controller>/5

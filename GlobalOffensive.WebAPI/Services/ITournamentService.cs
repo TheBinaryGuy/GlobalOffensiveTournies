@@ -1,4 +1,4 @@
-﻿using GlobalOffensive.WebAPI.Models;
+﻿using GlobalOffensive.Models;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 

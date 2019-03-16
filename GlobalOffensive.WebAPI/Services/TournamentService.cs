@@ -1,5 +1,5 @@
 ﻿using GlobalOffensive.WebAPI.Data;
-using GlobalOffensive.WebAPI.Models;
+using GlobalOffensive.Models;
 using ServiceStack.OrmLite;
 using System;
 using System.Collections.Generic;
@@ -39,7 +39,6 @@ namespace GlobalOffensive.WebAPI.Services
             using (var db = await _connFactory.OpenDbConnectionAsync())
             {
                 var tournaments = await db.SelectAsync<Tournament>();
-                await db.LoadReferencesAsync(tournaments);
                 return tournaments;
             }
         }
@@ -65,7 +64,8 @@ namespace GlobalOffensive.WebAPI.Services
         {
             using (var db = await _connFactory.OpenDbConnectionAsync())
             {
-                return await db.SaveAsync(tournament);
+                var result = await db.SaveAsync(tournament, references: tournament.Matches != null);
+                return !result;
             }
         }
     }

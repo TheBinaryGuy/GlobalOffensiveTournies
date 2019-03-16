@@ -66,6 +66,12 @@ namespace GlobalOffensive.WebAPI
                         //    .Description("API Key Authentication")
                         //    .Name("apiKey")
                         //    .In("header");
+
+                        c.ApiKey("Authorization")
+                            .Description("JWT Authentication")
+                            .Name("Authorization")
+                            .In("header");
+
                         //
                         //c.OAuth2("oauth2")
                         //    .Description("OAuth2 Implicit Grant")
@@ -249,6 +255,7 @@ namespace GlobalOffensive.WebAPI
                         // "apiKeyIn" can either be "query" or "header"
                         //
                         //c.EnableApiKeySupport("apiKey", "header");
+                        c.EnableApiKeySupport("Authorization", "header");
                     });
         }
     }

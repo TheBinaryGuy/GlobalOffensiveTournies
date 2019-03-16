@@ -1,5 +1,5 @@
 ﻿using GlobalOffensive.WebAPI.Data;
-using GlobalOffensive.WebAPI.Models;
+using GlobalOffensive.Models;
 using ServiceStack.OrmLite;
 using System;
 using System.Collections.Generic;
@@ -55,14 +55,17 @@ namespace GlobalOffensive.WebAPI.Services
             using (var db = await _connFactory.OpenDbConnectionAsync())
             {
                 var match = await db.LoadSingleByIdAsync<Match>(matchId);
-                var tournament = await db.LoadSingleByIdAsync<Tournament>(match.TournamentId);
+                var tournament = await db.SingleByIdAsync<Tournament>(match.TournamentId);
                 return tournament;
             }
         }
 
         public async Task<bool> UpdateMatchAsync(Match match)
         {
-            throw new NotImplementedException();
+            using (var db = await _connFactory.OpenDbConnectionAsync())
+            {
+                return await db.SaveAsync(match);
+            }
         }
     }
 }

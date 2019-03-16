@@ -64,7 +64,7 @@ namespace GlobalOffensive.WebAPI
                 statusCode = HttpStatusCode.Unauthorized;
             }
             // Other errros
-            catch (Exception)
+            catch (Exception ex)
             {
                 statusCode = HttpStatusCode.InternalServerError;
             }

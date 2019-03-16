@@ -1,5 +1,5 @@
 ﻿using GlobalOffensive.WebAPI.Data;
-using GlobalOffensive.WebAPI.Models;
+using GlobalOffensive.Models;
 using ServiceStack.OrmLite;
 using System.Threading.Tasks;
 using System.Web.Http;
