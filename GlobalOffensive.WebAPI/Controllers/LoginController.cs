@@ -29,7 +29,13 @@ namespace GlobalOffensive.WebAPI.Controllers
                 // Create the token
                 string token = createToken(login.Username);
                 // Return the token
-                return Ok(token);
+                return Json(new
+                {
+                    Token = token,
+                    Usage = $"Authorization: {token}",
+                    AlternateUsage = $"Authorization: Bearer {token}",
+                    IncludeIn = "Headers"
+                });
             }
             else
             {
